@@ -3,9 +3,9 @@ from datetime import datetime
 from pydantic import BaseModel
 
 class City(BaseModel):
-    id = int
-    name = str
-    additional_info = str
+    id: int
+    name: str
+    additional_info: str
 
 
     class Config:
@@ -13,17 +13,18 @@ class City(BaseModel):
 
 
 class Temperature(BaseModel):
-    id = int
-    city_id = int
-    date_time = datetime
-    temperature = float
+    id: int
+    city_id: int
+    date_time: datetime
+    temperature: float
 
     class Config:
         orm_mode = True
 
 
 class CityCreate(City):
-    pass
+    name: str
+    additional_info: str
 
 
 class CityGet(City):
